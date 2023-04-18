@@ -1,0 +1,88 @@
+{
+    "root": true,
+    "noInlineConfig": true,
+    "ignorePatterns": ["dist"],
+    "env": {
+        "browser": true,
+        "es6": true
+    },
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:import/recommended",
+        "plugin:react/recommended",
+        "plugin:react/jsx-runtime",
+        "plugin:react-hooks/recommended",
+        "plugin:jsx-a11y/recommended",
+        "prettier"
+    ],
+    "rules": {
+        "eqeqeq": "error",
+        "no-restricted-syntax": ["error", "ForInStatement"],
+        "no-param-reassign": "warn",
+        "prefer-const": "warn",
+        "no-console": "warn",
+        "no-alert": "warn",
+        "no-unused-vars": "warn",
+        "max-depth": ["warn", 2],
+        "max-lines": ["warn", 200],
+        "arrow-body-style": "error",
+
+        "react/prop-types": "off",
+        "react/jsx-boolean-value": "warn",
+        "react/hook-use-state": "warn",
+        "react/no-array-index-key": "warn",
+        "react/no-multi-comp": "warn",
+        "react/self-closing-comp": "warn",
+        "react/function-component-definition": [
+            "warn",
+            {
+                "namedComponents": "function-declaration",
+                "unnamedComponents": "arrow-function"
+            }
+        ],
+
+        "jsx-a11y/media-has-caption": "off",
+
+        "import/order": "error",
+        "import/first": "error",
+        "import/namespace": "off"
+    },
+    "settings": {
+        "react": {
+            "version": "detect"
+        },
+
+        "import/resolver": {
+            "node": {
+                "extensions": [".js", ".jsx"]
+            }
+        },
+
+        "jsx-a11y": {
+            "components": {
+                "Input": "input",
+                "Button": "button",
+                "Image": "img",
+                "Video": "video"
+            }
+        }
+    },
+    "overrides": [
+        {
+            "files": "!src/**/*",
+            "env": {
+                "node": true
+            }
+        },
+        {
+            "files": "styles.js",
+            "rules": {
+                "max-lines": "off"
+            }
+        }
+    ]
+}
